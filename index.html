@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	
+</head>
+<style>
+	#product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  background: white;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+</style>
+<body>
+	<h1>Product Store</h1>
+	<label for="product"></label>
+	<input id="product" placeholder="Search your product here" type="text" name="product">
+
+	<button type="submit">Search</button>
+	<div id="product-container"></div>
+	<script src="index.js"></script>
+</body>
+</html>
