@@ -23,6 +23,13 @@ fetch(`https://dummyjson.com/products/${id}`)
     price.textContent = "Price: ₹ " + product.price;
     description.textContent = product.description;
     category.textContent = "Category: " + product.category;
+	rating.textContent="Rating: "+product.rating;
+	stock.textContent="Stock: "+product.stock;
+	discount.textContent="Discount: "+product.discount;
+	SKU.textContent="SKU: "+product.SKU;
+	weight.textContent="Weight: "+product.weight;
+	warranty.textContent="Warranty: "+product.warrantyInformation;
+	shipping.textContent="Shipping: "+product.shippingInformation;
 
   })
   .catch(err => console.log(err));
