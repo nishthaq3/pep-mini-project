@@ -24,3 +24,4 @@ function showProducts(products) {
     container.appendChild(card);
   });
 }
+ 
