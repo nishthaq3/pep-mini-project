@@ -28,9 +28,18 @@ function showProducts(products) {
       <p>₹ ${product.price}</p>
     `;
 
+    // Make card clickable
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", () => {
+      window.location.href = `productdetail.html?id=${product.id}`;
+    });
+
     container.appendChild(card);
   });
 }
+
+
 
 // SEARCH BUTTON
 searchBtn.addEventListener("click", () => {
