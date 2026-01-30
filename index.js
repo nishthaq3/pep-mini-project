@@ -1,16 +1,22 @@
-alert("JS is connected");
-
 const container = document.getElementById("product-container");
+const searchInput = document.getElementById("product");
+const searchBtn = document.querySelector("button");
 
+let allProducts = [];
+
+// FETCH PRODUCTS
 fetch("https://dummyjson.com/products")
   .then(res => res.json())
   .then(data => {
-    console.log(data);
-    showProducts(data.products);
+    allProducts = data.products;   
+    showProducts(allProducts);
   })
   .catch(err => console.log(err));
 
+// DISPLAY PRODUCTS
 function showProducts(products) {
+  container.innerHTML = "";      
+
   products.forEach(product => {
     const card = document.createElement("div");
     card.className = "card";
@@ -24,4 +30,14 @@ function showProducts(products) {
     container.appendChild(card);
   });
 }
- 
+
+// SEARCH BUTTON
+searchBtn.addEventListener("click", () => {
+  const text = searchInput.value.toLowerCase();
+
+  const result = allProducts.filter(product =>
+    product.title.toLowerCase().includes(text)
+  );
+
+  showProducts(result);
+});
