@@ -50,13 +50,12 @@ searchBtn.addEventListener("click", () => {
       time: Date.now()
     });
     localStorage.setItem("searchHistory", JSON.stringify(history));
-    updateSuggestions(); // ✅ update browser suggestions
+    updateSuggestions(); 
   }
 
   showProducts(result);
 });
 
-// 🔽 BROWSER-STYLE SUGGESTIONS (DATALIST)
 function updateSuggestions() {
   const datalist = document.getElementById("searchSuggestions");
   datalist.innerHTML = "";
